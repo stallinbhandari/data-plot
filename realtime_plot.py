@@ -21,18 +21,13 @@ def animate(i):
     x=data['x_vals']
     y1=data['tot_1']
     y2=data['tot_2']
-    curr_x=x.iloc[-1]
-    curr_y1=y1.iloc[-1]
-    curr_y2=y2.iloc[-1]
+    curr_x=x.iloc[i-1]
+    curr_y1=y1.iloc[i-1]
+    curr_y2=y2.iloc[i-1]
     print(curr_x,curr_y1,curr_y2)
-# =============================================================================
-#     x_vals.append(next(index))
-#     y_vals.append(random.randint(0,5))
-# =============================================================================
-    
-    #plt.scatter(curr_x,curr_y1,marker=''s=14)
-   # plt.scatter(curr_x,curr_y2,marker='o's=14)
-    plt.cla()
+
+ 
+    plt.cla()# clear each previous plot
     plt.plot(curr_x,curr_y1,'-x',color='blue')
     plt.plot(curr_x,curr_y2,'-x',color='black')
     plt.plot(x,y1, label='channel 1',color='blue',linewidth=1)
