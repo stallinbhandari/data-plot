@@ -11,13 +11,14 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
 plt.style.use('fivethirtyeight')
-x_vals=[]#[0,1,2,3,4,5]
-y_vals=[]#[0,1,3,2,3,5]
-plt.plot(x_vals,y_vals)
+#x_vals=[]#[0,1,2,3,4,5]
+#y_vals=[]#[0,1,3,2,3,5]
+#plt.plot(x_vals,y_vals)
 
 index=  count()
 def animate(i):
-    data=pd.read_csv('ftpserver/Data.csv')
+    data=pd.read_csv('D:\\Geodetic_Personal\\Nagarkot\\ftpserver/data.csv')
+   #print (i)
     x=data['x_vals']
     y1=data['tot_1']
     y2=data['tot_2']
@@ -25,9 +26,14 @@ def animate(i):
     curr_y1=y1.iloc[i-1]
     curr_y2=y2.iloc[i-1]
     print(curr_x,curr_y1,curr_y2)
-
- 
-    plt.cla()# clear each previous plot
+# =============================================================================
+#     x_vals.append(next(index))
+#     y_vals.append(random.randint(0,5))
+# =============================================================================
+    
+    #plt.scatter(curr_x,curr_y1,marker=''s=14)
+   # plt.scatter(curr_x,curr_y2,marker='o's=14)
+    plt.cla()
     plt.plot(curr_x,curr_y1,'-x',color='blue')
     plt.plot(curr_x,curr_y2,'-x',color='black')
     plt.plot(x,y1, label='channel 1',color='blue',linewidth=1)
